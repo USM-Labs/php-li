@@ -1,0 +1,73 @@
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \newfontfamily\cyrillicfont{Times New Roman}
+}{
+  \setmainfont{CMU Serif}
+  \newfontfamily\cyrillicfont{CMU Serif}
+}
+\IfFontExistsTF{Courier New}{
+  \setmonofont{Courier New}
+  \newfontfamily\cyrillicfonttt{Courier New}
+}{
+  \setmonofont{CMU Typewriter Text}
+  \newfontfamily\cyrillicfonttt{CMU Typewriter Text}
+}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+\usepackage[a4paper,left=20mm,right=16mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\emergencystretch=3em
+\newcommand{\code}[1]{\texttt{\nolinkurl{#1}}}
+
+\newcommand{\university}{Государственный Университет Молдовы}
+\newcommand{\faculty}{Факультет Математики и Информатики}
+\newcommand{\department}{Кафедра Информатики}
+\newcommand{\worktype}{Проектная работа}
+\newcommand{\projecttitle}{Сайт недвижимости UrbanNest Estate}
+\newcommand{\studentname}{Splavski Maxim\\Metelska Daniela}
+\newcommand{\studentgroup}{I2402}
+\newcommand{\teacher}{Visnevschi V.}
+\newcommand{\cityyear}{Кишинэу, 2026}
+
+\newcommand{\makeprojecttitle}{
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\university\\
+\faculty\\
+\department
+
+\vspace{4cm}
+{\bfseries\fontsize{16pt}{19pt}\selectfont \worktype\par}
+\vspace{0.8cm}
+{\fontsize{14pt}{17pt}\selectfont Тема:\par}
+\vspace{0.25cm}
+{\bfseries\fontsize{15pt}{18pt}\selectfont \projecttitle\par}
+\end{center}
+
+\vspace{2.7cm}
+\begin{flushright}
+\begin{minipage}{0.45\textwidth}
+Выполнили студенты: \textbf{\studentname}\\
+Группа: \textbf{\studentgroup}\\[0.5cm]
+Проверил преподаватель: \textbf{\teacher}
+\end{minipage}
+\end{flushright}
+
+\vfill
+\begin{center}
+\cityyear
+\end{center}
+\end{titlepage}
+\setcounter{page}{2}
+}
